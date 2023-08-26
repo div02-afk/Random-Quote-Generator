@@ -1,18 +1,10 @@
 import './App.css'
-// import data from './quotes.json';
+import data from './quotes.json';
 import React from 'react'
 // import javascriptLogo from './javascript.svg'
 // import viteLogo from '/vite.svg'
 // import {Generator} from './jquery'
-async function populate() {
-  const requestURL =
-    "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
-  const request = new Request(requestURL);
 
-  const response = await fetch(request);
-  const superHeroes = await response.json();
-  return superHeroes
-}
 class App extends React.Component{
   constructor(props){
     super(props)
@@ -32,7 +24,6 @@ class App extends React.Component{
     let quote;
     let author;
     console.log("clicked");
-    let data = populate()
   this.setState ({
     quote:data[index]["quote"],
     author:data[index]["author"],
